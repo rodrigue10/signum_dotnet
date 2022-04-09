@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RunSettings>
+
+	<!-- Parameters used by tests at run time _ Connect to Signum TestNet Node -->
+	<TestRunParameters>
+		<Parameter name="webAppUrl" value="http://test-srs-node:6876/" />
+		<Parameter name="apiKey" value="e673529588638d2129af1e0528a1642cf2e0c180" />
+		<Parameter name="accountID" value="5812913123670292755" />
+		<Parameter name="accountRS" value="TS-7YAM-Q2DB-UXXS-7XWC3" />
+		<Parameter name="poolAccountID" value="13821577863870965285" />
+		<Parameter name="poolAccountRS" value="TS-WTK7-UTFQ-9DUV-DV2NZ" />
+		
+		<Parameter name="badaccountID" value="5812913123670292753829345" />
+	</TestRunParameters>
+
+	<!-- Configuration for loggers -->
+	<LoggerRunSettings>
+		<Loggers>
+			<Logger friendlyName="console" enabled="True">
+				<Configuration>
+					<Verbosity>quiet</Verbosity>
+				</Configuration>
+			</Logger>
+			<Logger friendlyName="trx" enabled="True">
+				<Configuration>
+					<LogFileName>foo.trx</LogFileName>
+				</Configuration>
+			</Logger>
+			<Logger friendlyName="html" enabled="True">
+				<Configuration>
+					<LogFileName>foo.html</LogFileName>
+				</Configuration>
+			</Logger>
+			<Logger friendlyName="blame" enabled="True" />
+		</Loggers>
+	</LoggerRunSettings>
+
+	<!-- Adapter Specific sections -->
+
+	<!-- MSTest adapter -->
+	<MSTest>
+		<MapInconclusiveToFailed>True</MapInconclusiveToFailed>
+		<CaptureTraceOutput>false</CaptureTraceOutput>
+		<DeleteDeploymentDirectoryAfterTestRunIsComplete>False</DeleteDeploymentDirectoryAfterTestRunIsComplete>
+		<DeploymentEnabled>False</DeploymentEnabled>
+		<AssemblyResolution>
+			<Directory path="D:\myfolder\bin\" includeSubDirectories="false"/>
+		</AssemblyResolution>
+	</MSTest>
+
+</RunSettings>
