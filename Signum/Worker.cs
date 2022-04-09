@@ -37,61 +37,33 @@ namespace Signum
 
                 var result = await SignumService.GetTime();
                 var result2 = await SignumService.GetMiningInfo();
-                var result3 = await SignumService.GetState(includeCounts: "true", apiKey:"signumpassword") ;
+                var result3 = await SignumService.GetState() ;
 
                 if(result != null)
                 {
-                    _logger.LogInformation($"{{resultTime}}", result.Time);
+                    _logger.LogWarning(result.GetType().Name);
+                    _logger.LogInformation(result.PrintInterfaceData());
                 }
                 
 
                 if(result2 != null)
                 {
-
-                    _logger.LogInformation(message: $"{{height}} - {{error}} - {{errDescrip}}", result2.Height, result2.ErrorCode, result2.ErrorDescription)  ;
+                    _logger.LogWarning(result2.GetType().Name);
+                    _logger.LogInformation(result2.PrintInterfaceData());
                 }
 
                 if(result3 != null)
                 {
-                    if (result3.IsValidRequest)
-                    {
-                        StringBuilder sbHead = new();
-
-                        foreach (var item in typeof(IGetState).GetProperties())
-                        {
-                            sbHead.Append(item.Name);
-                            sbHead.Append(" - ");
-                            sbHead.Append(item.GetValue(result3));
-                            sbHead.AppendLine();
-
-                        }
-                        _logger.LogInformation($"{{sbHead}}", sbHead);
-                    }
-                    else
-                    {
-                        StringBuilder sbHead = new();
-
-                        foreach (var item in typeof(IBaseRequest).GetProperties())
-                        {
-                            sbHead.Append(item.Name);
-                            sbHead.Append(" - ");
-                            sbHead.Append(item.GetValue(result3));
-                            sbHead.AppendLine();
-
-                        }
-                        _logger.LogInformation($"{{sbHead}}", sbHead);
-                    }
-
-                    
+                    _logger.LogWarning(result3.GetType().Name);
+                    _logger.LogInformation(result3.PrintInterfaceData());
+                                                       
                
                 }
 
 
 
-
-
                 _logger.LogInformation("Worker running at: {time}", DateTimeOffset.Now);
-                await Task.Delay(5000, stoppingToken);
+                await Task.Delay(10000, stoppingToken);
             }
         }
     }

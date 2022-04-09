@@ -8,7 +8,7 @@ namespace Signum.NET
 {
     public static class Extensions
     {
-        public static string PrintInterfaceData(object obj)
+        public static string PrintInterfaceData(this object obj)
         {
 
             obj.GetType().GetInterfaces();

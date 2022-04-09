@@ -35,9 +35,8 @@ namespace Signum.NET.Tests
             Assert.IsNotNull(getMiningInfo);
             Assert.IsTrue(getMiningInfo.IsValidRequest);
 
+            TestContext.WriteLine($"Configured URI: {uri}");
             TestContext.WriteLine(TestExtensions.WriteInterfaceData(getMiningInfo)); 
-
-
 
 
     }
@@ -80,8 +79,8 @@ namespace Signum.NET.Tests
 
             Assert.AreEqual<string>(getRewardRecipient.RewardRecipient, poolAccount);
             
-            TestContext.WriteLine($"Configured URI: {uri}");
 
+            TestContext.WriteLine($"Configured URI: {uri}");
             TestContext.WriteLine(TestExtensions.WriteInterfaceData(getRewardRecipient));
            
                        
@@ -152,41 +151,12 @@ namespace Signum.NET.Tests
 
             Assert.IsFalse(getState.IsValidRequest);
 
+            TestContext.WriteLine($"Configured URI: {uri}");
             TestContext.WriteLine(TestExtensions.WriteInterfaceData(getState));
 
 
         }
 
-        //[TestMethod]
-        //public void GetStateIncludeCounts()
-        //{
-
-        //    var property = TestContext.Properties["webAppUrl"];
-        //    var apiKey = TestContext.Properties["apiKey"];
-        //    Assert.IsNotNull(property);
-        //    Assert.IsNotNull(apiKey);
-
-        //    string? uri = property.ToString();
-        //    string? apiKeySecret = apiKey.ToString();
-        //    Assert.IsNotNull(uri);
-        //    Assert.IsNotNull(apiKeySecret);
-
-        //    HttpClient client = new()
-        //    {
-        //        BaseAddress = new Uri(uri)
-        //    };
-
-        //    ISignumAPIService signumAPI = new SignumAPIService(client);
-
-        //    IGetState? getState = signumAPI.GetState(includeCounts: true.ToString(), apiKey: apiKeySecret).Result;
-        //    Assert.IsNotNull(getState);
-
-        //    Assert.IsFalse(getState.IsValidRequest);
-
-        //    TestContext.WriteLine($"Configured URI: {uri}");
-        //    TestContext.WriteLine(WriteInterfaceData(getState));
-
-
-        //}
+        
     }
 }

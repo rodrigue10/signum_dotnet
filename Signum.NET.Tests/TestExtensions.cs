@@ -9,7 +9,7 @@ namespace Signum.NET.Tests
     public static class TestExtensions
     {
 
-        public static string WriteInterfaceData(object obj)
+        public static string WriteInterfaceData(this object obj)
         {
 
             obj.GetType().GetInterfaces();
