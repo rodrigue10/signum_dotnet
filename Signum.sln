@@ -3,11 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32127.271
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Signum", "Signum\Signum.csproj", "{B01FEBD7-DEA1-4D5B-8E95-778DBEC2D44B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Signum", "Signum\Signum.csproj", "{B01FEBD7-DEA1-4D5B-8E95-778DBEC2D44B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Signum.NET", "Signum.NET\Signum.NET.csproj", "{CEEC1C72-4556-4062-B550-7FF00DE015F8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Signum.NET", "Signum.NET\Signum.NET.csproj", "{CEEC1C72-4556-4062-B550-7FF00DE015F8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Signum.NET.Tests", "Signum.NET.Tests\Signum.NET.Tests.csproj", "{15AA6EA6-84C1-4B33-A6AF-BC73AB79A052}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Signum.NET.Tests", "Signum.NET.Tests\Signum.NET.Tests.csproj", "{15AA6EA6-84C1-4B33-A6AF-BC73AB79A052}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1244C233-40DE-47BF-AA0E-92C653B9AB7C}"
+	ProjectSection(SolutionItems) = preProject
+		LICENSE.txt = LICENSE.txt
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
