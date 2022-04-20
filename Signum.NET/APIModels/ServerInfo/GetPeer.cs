@@ -35,7 +35,7 @@ namespace Signum.NET
     public class GetPeer : BaseRequest,  IGetPeer
     {
 
-        //not in JSON request...used to add IP address when creating http request
+        //not in main JSON request...used to manually add IP address when creating http request since the IP is an input
         public string? PublicIP { get; set; }
 
         #region API Properties

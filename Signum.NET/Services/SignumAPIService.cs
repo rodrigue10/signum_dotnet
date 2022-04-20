@@ -923,7 +923,7 @@ namespace Signum.NET
 
                 uri.Append(APIConstants.API_URL);
                 uri.Append(APIConstants.API_REQUEST);
-                uri.Append(RequestType.GET_ACCOUNTS_WITH_REWARD_RECIP);
+                uri.Append(RequestType.GET_ACCOUNTS_WITH_REWARD_RECIPIENT);
 
 
                 List<KeyValuePair<string, string>> allIputParams = new()

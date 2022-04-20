@@ -77,11 +77,13 @@ namespace Signum.NET.Tests
             
             Assert.IsTrue(getRewardRecipient.IsValidRequest);
 
+            TestContext.WriteLine($"Configured URI: {uri}");
+            TestContext.WriteLine(TestExtensions.WriteInterfaceData(getRewardRecipient));
+
             Assert.AreEqual<string>(getRewardRecipient.RewardRecipient, poolAccount);
             
 
-            TestContext.WriteLine($"Configured URI: {uri}");
-            TestContext.WriteLine(TestExtensions.WriteInterfaceData(getRewardRecipient));
+
            
                        
         }
@@ -157,6 +159,134 @@ namespace Signum.NET.Tests
 
         }
 
-        
+        [TestMethod]
+        public void GetAccountsWithRewardRecipient_ValidAccount()
+        {
+
+            var property = TestContext.Properties["webAppUrl"];
+            Assert.IsNotNull(property);
+
+            var accountIdobj = TestContext.Properties["accountID"];
+            Assert.IsNotNull(accountIdobj);
+
+
+            var poolAccountId = TestContext.Properties["poolAccountID"];
+            Assert.IsNotNull(poolAccountId);
+
+
+
+            string? uri = property.ToString();
+            string? accountID = accountIdobj.ToString();
+            string? poolAccount = poolAccountId.ToString();
+            Assert.IsNotNull(uri);
+            Assert.IsNotNull(poolAccount);
+            Assert.IsNotNull(accountID);
+
+            HttpClient client = new()
+            {
+                BaseAddress = new Uri(uri)
+            };
+
+            ISignumAPIService signumAPI = new SignumAPIService(client);
+
+            IGetAccountsWithRewardRecipient? getAccountsRewardRecipient = signumAPI.GetAccountsWithRewardRecipient(account: poolAccount).Result;
+            Assert.IsNotNull(getAccountsRewardRecipient);
+
+            Assert.IsTrue(getAccountsRewardRecipient.IsValidRequest);
+
+            TestContext.WriteLine($"Configured URI: {uri}");
+            TestContext.WriteLine(TestExtensions.WriteInterfaceData(getAccountsRewardRecipient));
+
+            Assert.IsNotNull(getAccountsRewardRecipient.Accounts);
+            Assert.IsTrue(getAccountsRewardRecipient.Accounts.Contains(accountID));
+            
+        }
+
+        [TestMethod]
+        public void GetAccountsWithRewardRecipient_NonMemberAccount()
+        {
+
+            var property = TestContext.Properties["webAppUrl"];
+            Assert.IsNotNull(property);
+
+            var accountIdobj = TestContext.Properties["badaccountID"];
+            Assert.IsNotNull(accountIdobj);
+
+
+            var poolAccountId = TestContext.Properties["poolAccountID"];
+            Assert.IsNotNull(poolAccountId);
+
+
+
+            string? uri = property.ToString();
+            string? accountID = accountIdobj.ToString();
+            string? poolAccount = poolAccountId.ToString();
+            Assert.IsNotNull(uri);
+            Assert.IsNotNull(poolAccount);
+            Assert.IsNotNull(accountID);
+
+            HttpClient client = new()
+            {
+                BaseAddress = new Uri(uri)
+            };
+
+            ISignumAPIService signumAPI = new SignumAPIService(client);
+
+            IGetAccountsWithRewardRecipient? getAccountsRewardRecipient = signumAPI.GetAccountsWithRewardRecipient(account: poolAccount).Result;
+            Assert.IsNotNull(getAccountsRewardRecipient);
+
+            Assert.IsTrue(getAccountsRewardRecipient.IsValidRequest);
+
+            TestContext.WriteLine($"Configured URI: {uri}");
+            TestContext.WriteLine(TestExtensions.WriteInterfaceData(getAccountsRewardRecipient));
+
+            Assert.IsNotNull(getAccountsRewardRecipient.Accounts);
+            Assert.IsFalse(getAccountsRewardRecipient.Accounts.Contains(accountID));
+
+        }
+
+        [TestMethod]
+        public void GetAccountsWithRewardRecipient_InValidPoolAccount()
+        {
+
+            var property = TestContext.Properties["webAppUrl"];
+            Assert.IsNotNull(property);
+
+            var accountIdobj = TestContext.Properties["badaccountID"];
+            Assert.IsNotNull(accountIdobj);
+
+
+            var poolAccountId = TestContext.Properties["badaccountID"];
+            Assert.IsNotNull(poolAccountId);
+
+
+
+            string? uri = property.ToString();
+            string? accountID = accountIdobj.ToString();
+            string? poolAccount = poolAccountId.ToString();
+            Assert.IsNotNull(uri);
+            Assert.IsNotNull(poolAccount);
+            Assert.IsNotNull(accountID);
+
+            HttpClient client = new()
+            {
+                BaseAddress = new Uri(uri)
+            };
+
+            ISignumAPIService signumAPI = new SignumAPIService(client);
+
+            IGetAccountsWithRewardRecipient? getAccountsRewardRecipient = signumAPI.GetAccountsWithRewardRecipient(account: poolAccount).Result;
+            Assert.IsNotNull(getAccountsRewardRecipient);
+
+            Assert.IsFalse(getAccountsRewardRecipient.IsValidRequest);
+
+            TestContext.WriteLine($"Configured URI: {uri}");
+            TestContext.WriteLine(TestExtensions.WriteInterfaceData(getAccountsRewardRecipient));
+
+            
+
+        }
+
+
     }
 }

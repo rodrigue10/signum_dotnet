@@ -7,7 +7,7 @@ namespace Signum.NET
     #region Interface
     public interface IGetAccountsWithRewardRecipient : IBaseRequest
     {
-        public List<string>? Accounts { get; }
+        public IList<string>? Accounts { get; }
 
 
     }
@@ -30,7 +30,7 @@ namespace Signum.NET
 
         #region IGetAccountsWithRewardRecipient
 
-        List<string>? IGetAccountsWithRewardRecipient.Accounts => Accounts;
+        IList<string>? IGetAccountsWithRewardRecipient.Accounts => Accounts;
         #endregion
 
     }

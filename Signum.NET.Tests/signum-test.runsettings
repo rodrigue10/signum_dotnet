@@ -3,7 +3,7 @@
 
 	<!-- Parameters used by tests at run time _ Connect to Signum TestNet Node -->
 	<TestRunParameters>
-		<Parameter name="webAppUrl" value="http://test-srs-node:6876/" />
+		<Parameter name="webAppUrl" value="http://testwallet.signumcoin.com/" />
 		<Parameter name="apiKey" value="e673529588638d2129af1e0528a1642cf2e0c180" />
 		<Parameter name="accountID" value="5812913123670292755" />
 		<Parameter name="accountRS" value="TS-7YAM-Q2DB-UXXS-7XWC3" />
