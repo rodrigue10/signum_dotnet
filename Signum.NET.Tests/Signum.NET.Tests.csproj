@@ -3,8 +3,9 @@
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
-
     <IsPackable>false</IsPackable>
+    <RunSettingsFilePath>$(MSBuildProjectDirectory)\signum-test.runsettings</RunSettingsFilePath>
+
   </PropertyGroup>
 
   <ItemGroup>
@@ -19,6 +20,12 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Signum.NET\Signum.NET.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="signum-test.runsettings">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>
