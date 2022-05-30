@@ -65,15 +65,22 @@ namespace Signum.NET
 
         #region Account
 
-        Task<IGetAccount?> GetAccount(string accountID, string height = "", string commitAmount = "", string commitEstimate = "");
-        Task<IGetAccountBlockIds?> GetAccountBlockIds(string accountId, string firstIndex = "", string lastIndex = "", string timestamp = "");
-        Task<IGetAccountBlocks?> GetAccountBlocks(string account, string firstIndex = "", string lastIndex = "", string timestamp = "");
-        Task<IGetAccountBlocksTrans?> GetAccountBlocksTrans(string account, string firstIndex = "", string lastIndex = "", string timestamp = "");
-        Task<IGetAccountPublicKey?> GetAccountPublicKey(string account);
-        Task<IGetBalance?> GetBalance(string account);
+            #region POST
+            Task<ICreateTransactionResponse?> SetAccountInfo(SetAccountInfo setAccountInfo);
 
-        Task<IGetAccountAssets?> GetAccountAssets(string accountID, string firstIndex="", string lastIndex="");
+        #endregion
 
+            #region GET
+
+            Task<IGetAccount?> GetAccount(string accountID, string height = "", string commitAmount = "", string commitEstimate = "");
+            Task<IGetAccountBlockIds?> GetAccountBlockIds(string accountId, string firstIndex = "", string lastIndex = "", string timestamp = "");
+            Task<IGetAccountBlocks?> GetAccountBlocks(string account, string firstIndex = "", string lastIndex = "", string timestamp = "");
+            Task<IGetAccountBlocksTrans?> GetAccountBlocksTrans(string account, string firstIndex = "", string lastIndex = "", string timestamp = "");
+            Task<IGetAccountPublicKey?> GetAccountPublicKey(string account);
+            Task<IGetBalance?> GetBalance(string account);
+
+            Task<IGetAccountAssets?> GetAccountAssets(string accountID, string firstIndex="", string lastIndex="");
+            #endregion
 
         #endregion
 

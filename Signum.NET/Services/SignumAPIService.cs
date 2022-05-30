@@ -400,6 +400,39 @@ namespace Signum.NET
 
 
         #region Account
+
+        #region POST
+
+        public async Task<ICreateTransactionResponse?> SetAccountInfo(SetAccountInfo setAccountInfo)
+        {
+
+            StringBuilder uri = new();
+
+            uri.Append(APIConstants.API_URL);
+            uri.Append(APIConstants.API_REQUEST);
+            uri.Append(RequestType.SET_ACCOUNT_INFO);
+
+
+
+            //commitment.RequestType = "addCommitment";
+
+            //convert class model to JSON
+           // var JSONstring = JsonSerializer.Serialize(setAccountInfo);
+
+            //Convert JSON to Dictionary to be use in FormUrl
+           var  dictionary = JsonSerializer.Deserialize<Dictionary<string, string>>(JsonSerializer.Serialize(setAccountInfo));
+
+            //turn dictionary into form Url
+            var form = new FormUrlEncodedContent(dictionary);
+
+            //var content = new StringContent(form, Encoding.UTF8 , "application/x-www-form-urlencoded");
+
+            var response =  await httpClient.PostAsync(uri.ToString(), form); //or PostAsync for POST
+
+            return await response.Content.ReadFromJsonAsync<ICreateTransactionResponse?>();
+
+        }
+        #endregion
         public async Task<IGetAccount?> GetAccount(string accountID, string height = "", string commitAmount="", string commitEstimate="")
         {
 

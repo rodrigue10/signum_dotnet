@@ -265,6 +265,46 @@ namespace Signum.NET.Tests
 
         }
 
+        [TestMethod]
+        public void LongConver_Overflow()
+        {
+
+            var property = TestContext.Properties["webAppUrl"];
+
+
+
+            Assert.IsNotNull(property);
+
+
+
+            string? uri = property.ToString();
+
+
+            Assert.IsNotNull(uri);
+
+
+
+            HttpClient client = new()
+            {
+                BaseAddress = new Uri(uri)
+            };
+
+            ISignumAPIService signumAPI = new SignumAPIService(client);
+
+            ILongConvert? longConvert = signumAPI.LongConvert("1920983109830198374091873524082").Result;
+
+            Assert.IsNotNull(longConvert);
+
+            Assert.IsTrue(longConvert.IsValidRequest);    
+
+
+            TestContext.WriteLine($"Configured URI: {uri}");
+            TestContext.WriteLine(TestExtensions.WriteInterfaceData(longConvert));
+
+
+        }
+
+
 
 
     }

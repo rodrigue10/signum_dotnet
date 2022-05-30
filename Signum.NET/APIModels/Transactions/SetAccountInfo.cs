@@ -10,8 +10,8 @@ namespace Signum.NET
     public class SetAccountInfo : TransactionCommon
     {
 
-        [JsonPropertyName("requestType")]
-        public string? RequestType { get; set; }
+        //[JsonPropertyName("requestType")]
+        //public string? RequestType { get; set; }
 
         [JsonPropertyName("name")]
         public string? Name { get; set; }

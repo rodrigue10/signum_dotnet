@@ -9,8 +9,8 @@ namespace Signum.NET
 {
     public class TransactionCommon 
     {
-              [JsonPropertyName("referencedTransactionFullHash")]
-             public string? ReferencedTransactionFullHash { get; set; }
+            [JsonPropertyName("referencedTransactionFullHash")]
+            public string? ReferencedTransactionFullHash { get; set; }
 
             [JsonPropertyName("secretPhrase")]
             public string? SecretPhrase { get; set; }

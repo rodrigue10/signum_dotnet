@@ -15,6 +15,11 @@
 		<Parameter name="longId" value="-7881816650550138941" />
 
 		<Parameter name="badaccountID" value="5812913123670292753829345" />
+
+
+		<!-- Parameters associated with a test account for transaction tests-->
+		<Parameter name="testPassphrase" value="express some carve curl run write season death swirl agony first walk" />
+		<Parameter name="testPublicKey" value="88d1b48ebb5533912dc8cb7852915cec1ef9be3c57ac3cb462008444aab90573" />
 		
 	</TestRunParameters>
 

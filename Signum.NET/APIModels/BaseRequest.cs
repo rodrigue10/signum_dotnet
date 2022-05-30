@@ -21,6 +21,10 @@ namespace Signum.NET
         [JsonPropertyName("errorCode")]
         public int ErrorCode { get; set; }
 
+        
+        [JsonPropertyName("error")]
+        public string? Error { get; set; }
+
         [JsonPropertyName("errorDescription")]
         public string? ErrorDescription { get; set; }
 

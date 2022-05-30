@@ -7,5 +7,7 @@
         public int ErrorCode { get; }
         public string? ErrorDescription { get; }
         public bool IsValidRequest { get; }
+
+        public string? Error { get; }
     }
 }
