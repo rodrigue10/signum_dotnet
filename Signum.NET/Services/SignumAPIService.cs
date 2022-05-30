@@ -417,10 +417,10 @@ namespace Signum.NET
             //commitment.RequestType = "addCommitment";
 
             //convert class model to JSON
-           // var JSONstring = JsonSerializer.Serialize(setAccountInfo);
+            // var JSONstring = JsonSerializer.Serialize(setAccountInfo);
 
             //Convert JSON to Dictionary to be use in FormUrl
-           var  dictionary = JsonSerializer.Deserialize<Dictionary<string, string>>(JsonSerializer.Serialize(setAccountInfo));
+            Dictionary<string, string>? dictionary = JsonSerializer.Deserialize<Dictionary<string, string>>(JsonSerializer.Serialize(setAccountInfo));
 
             //turn dictionary into form Url
             var form = new FormUrlEncodedContent(dictionary);
