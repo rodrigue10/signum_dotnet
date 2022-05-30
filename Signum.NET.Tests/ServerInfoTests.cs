@@ -41,11 +41,11 @@ namespace Signum.NET.Tests
             TestContext.WriteLine($"Configured URI: {uri}");
             TestContext.WriteLine($"UTC Time: {getTime.Time}");
 
-            TestContext.WriteLine(DateTime.UtcNow.ToString());
+            TestContext.WriteLine($"PC UTC Time:{DateTime.UtcNow.ToString()}");
             var time = getTime.Time.FromSignumEpochToUtc();
 
-            TestContext.WriteLine(time.ToString());
-            TestContext.WriteLine(time.ToLocalTime().ToString());
+            TestContext.WriteLine($"Node Time UTC: {time}");
+            TestContext.WriteLine($"Node Time Local:{time.ToLocalTime()}");
 
             TestContext.WriteLine(TestExtensions.WriteInterfaceData(getTime)); 
 

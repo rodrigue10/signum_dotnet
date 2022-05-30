@@ -199,7 +199,14 @@ namespace Signum.NET.Tests
 
             Assert.IsNotNull(getAccountsRewardRecipient.Accounts);
             Assert.IsTrue(getAccountsRewardRecipient.Accounts.Contains(accountID));
+            TestContext.WriteLine($"{accountID} IS in the list:");
+            foreach (var item in getAccountsRewardRecipient.Accounts)
+            {
+                TestContext.WriteLine(item);
+            }
             
+
+
         }
 
         [TestMethod]
@@ -242,6 +249,11 @@ namespace Signum.NET.Tests
 
             Assert.IsNotNull(getAccountsRewardRecipient.Accounts);
             Assert.IsFalse(getAccountsRewardRecipient.Accounts.Contains(accountID));
+            TestContext.WriteLine($"{accountID} IS NOT in the list:");
+            foreach (var item in getAccountsRewardRecipient.Accounts)
+            {
+                TestContext.WriteLine(item);
+            }
 
         }
 
@@ -283,7 +295,10 @@ namespace Signum.NET.Tests
             TestContext.WriteLine($"Configured URI: {uri}");
             TestContext.WriteLine(TestExtensions.WriteInterfaceData(getAccountsRewardRecipient));
 
-            
+            TestContext.WriteLine($"{accountID} IS a bad account:");
+        
+
+
 
         }
 

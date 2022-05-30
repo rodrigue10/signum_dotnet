@@ -818,7 +818,7 @@ namespace Signum.NET
             List<KeyValuePair<string, string>> allIputParams = new()
             {
                 // Converting Request Params to Key Value Pair.  
-                new KeyValuePair<string, string>("&id=", id)
+                new KeyValuePair<string, string>("&account=", id)
             };
 
             //Uncomment if paramaters needed

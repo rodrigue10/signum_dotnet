@@ -9,8 +9,13 @@
 		<Parameter name="accountRS" value="TS-7YAM-Q2DB-UXXS-7XWC3" />
 		<Parameter name="poolAccountID" value="13821577863870965285" />
 		<Parameter name="poolAccountRS" value="TS-WTK7-UTFQ-9DUV-DV2NZ" />
-		
+
+		<!-- Parameters used for Long Convert Test -->
+		<Parameter name="stringId" value="10564927423159412675" />
+		<Parameter name="longId" value="-7881816650550138941" />
+
 		<Parameter name="badaccountID" value="5812913123670292753829345" />
+		
 	</TestRunParameters>
 
 	<!-- Configuration for loggers -->
