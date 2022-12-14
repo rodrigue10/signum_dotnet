@@ -25,7 +25,7 @@ namespace Signum.NET
 
     #region Class
 
-    public class GetBlockchainStatus : BaseRequest, IGetBlockchainStatus
+    internal class GetBlockchainStatus : BaseRequest, IGetBlockchainStatus
     {
 
         #region API Properties

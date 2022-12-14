@@ -1048,18 +1048,8 @@ namespace Signum.NET
 
             }
 
-            GetPeer? response = await httpClient.GetFromJsonAsync<GetPeer>(uri.ToString());
-
-            if (response is null)
-            {
-                return null;
-            }
-            else
-            {
-                response.PublicIP = peer;
-
-                return response;
-            }
+            return await httpClient.GetFromJsonAsync<GetPeer>(uri.ToString());
+    
 
         }
         public async Task<IGetPeers?> GetPeers(string active = "", string state = "")

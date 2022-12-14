@@ -5,8 +5,8 @@
 	<TestRunParameters>
 		<Parameter name="webAppUrl" value="http://testwallet.signumcoin.com/" />
 		<Parameter name="apiKey" value="e673529588638d2129af1e0528a1642cf2e0c180" />
-		<Parameter name="accountID" value="5812913123670292755" />
-		<Parameter name="accountRS" value="TS-7YAM-Q2DB-UXXS-7XWC3" />
+		<Parameter name="accountID" value="9695426114108388759" />
+		<Parameter name="accountRS" value="TS-MXER-PULR-T3N3-ALA5F" />
 		<Parameter name="poolAccountID" value="13821577863870965285" />
 		<Parameter name="poolAccountRS" value="TS-WTK7-UTFQ-9DUV-DV2NZ" />
 

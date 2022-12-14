@@ -106,12 +106,53 @@ namespace Signum.NET
 
         #region ServerInfo
 
+
+        /// <summary>
+        /// Get blockchain time
+        /// </summary>
+        /// <returns>Returns an IGetTime interface containing the relevant data</returns>
         Task<IGetTime?> GetTime();
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="includeCounts"></param>
+        /// <param name="apiKey"></param>
+        /// <returns></returns>
         Task<IGetState?> GetState(string includeCounts = "", string apiKey = "");
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="active"></param>
+        /// <param name="state"></param>
+        /// <returns></returns>
         Task<IGetPeers?> GetPeers(string active = "", string state = "");
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="peer"></param>
+        /// <returns></returns>
         Task<IGetPeer?> GetPeer(string peer);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         Task<IGetMyInfo?> GetMyInfo();
+
+        /// <summary>
+        /// Get blockchain status.
+        /// </summary>
+        /// <returns>Blockchain status</returns>
         Task<IGetBlockchainStatus?> GetBlockchainStatus();
+
+        /// <summary>
+        /// Blockchain Constants
+        /// </summary>
+        /// <returns>Summarry of blockchain constants.  Including transaction types and costs</returns>
         Task<IGetConstants?> GetConstants();
 
         #endregion

@@ -8,7 +8,7 @@ namespace Signum.NET
 {
     public static class APIConstants
     {
-        public const string API_URL = "/burst?";
+        public const string API_URL = "/api?";
         public const string API_REQUEST = "requestType=";
     }
 

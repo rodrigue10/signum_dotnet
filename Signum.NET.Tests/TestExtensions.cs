@@ -29,9 +29,10 @@ namespace Signum.NET.Tests
                     sb.Append(item.Name);
                     sb.Append(" - ");
                     sb.Append(item.GetValue(obj));
-                    sb.AppendLine();
+                    sb.AppendLine();                   
 
                 }
+
                 sb.AppendLine();
             }
 

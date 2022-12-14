@@ -6,6 +6,9 @@ namespace Signum.NET
     #region Interface
     public interface IGetTime : IBaseRequest
     {
+        /// <summary>
+        /// Signum Blockchain time in seconds
+        /// </summary>
         public int Time { get; }  
 
     }
